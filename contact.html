@@ -56,37 +56,36 @@
 		</div>
 		
 		<div class="m-form">
-			<form action="##" method="get" name="">
+			<form class="m-formlist" action="##" method="get" name="">
 				<fieldset>
 					<legend>意见反馈</legend>
 					<div class="formitm">
 						<label class="lab">用户</label>
 						<div class="ipt">
-							<input type="text" datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！" name="username" class="u-ipt"/>
-							<div class="Validform_checktip"></div>
+							<input type="text" name="username" class="u-ipt" required/>
 						</div>
 					</div>
 
 					<div class="formitm">
 						<label class="lab">邮箱</label>
 						<div class="ipt">
-							<input type="text" name="email" class="u-ipt"/>
+							<input type="email" name="email" class="u-ipt" email required/>
 						</div>
 					</div>
 					<div class="formitm">
 						<label class="lab">手机</label>
 						<div class="ipt">
-							<input type="text" name="phone" class="u-ipt"/>
+							<input type="text" name="phone" class="u-ipt"  required/>
 						</div>
 					</div>
 					<div class="formitm">
 						<label class="lab">留言</label>
 						<div class="ipt">
-							<textarea  tip="请在这里输入您的意见。" name="content" class="u-ipt">请在这里输入您的意见。</textarea>
+							<textarea  tip="请在这里输入您的意见。" name="comment" class="u-ipt"></textarea>
 						</div>
 					</div>
 					<div class="formitm formitm-1">
-						<button id="btn-submit" class="u-btn" type="button">提交</button>
+						<button id="btn-submit" class="u-btn" type="submit">提交</button>
 					</div>
 				</fieldset>
 			</form>
@@ -123,6 +122,7 @@
 </div>
 
 <script src="./static/js/libs/jquery-1.10.1.min.js"></script>
+<script src="./static/js/plugs/validate/jquery.validate.min.js"></script>
 <script src="./static/js/page/contact.js"></script>
 </body>
 </html>
