@@ -18,7 +18,7 @@ $(function(){
 		max: $.validator.format("请输入不大于 {0} 的数值"),
 		min: $.validator.format("请输入不小于 {0} 的数值")
 	});
-	
+
 	$(".m-formlist").validate({
 
 	})
