@@ -1,0 +1,163 @@
+.g-bd {
+	width:960px;
+	margin:0 auto;
+}
+
+/* 窦昆 */
+.g-boss {
+	background-color: #fff;
+	color: #989898;
+	margin-bottom: 44px;
+	box-shadow: 0px 1px 3px #e1e1e1;
+}
+
+.g-boss .boss-warp {
+	width:642px;
+	padding-top: 10px;
+	margin: 0 auto;
+}
+
+.g-boss .boss-imgs {
+	float: right;
+}
+
+.g-boss .boss-name {
+	font-size: 28px;
+	line-height: 80px;
+}
+
+.g-boss .boss-success li {
+	height: 22px;
+	line-height: 22px;
+}
+
+/* 团队 */
+.g-team {
+	padding: 10px 0px 50px;
+	background-color: #fff;
+	box-shadow: 0px 1px 3px #e1e1e1;
+	margin-bottom: 44px;
+}
+
+.g-team .team-tit{
+	margin-bottom: 13px;
+}
+
+.g-team .team-list{
+
+}
+
+.g-team .team-member {
+	width:240px;
+	float: left;
+}
+
+.g-team .team-member .team-member-pic{
+	height:341px;
+	position: relative;
+}
+
+.g-team .team-member-info {
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	overflow: hidden;
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.1);
+	filter:alpha(opacity=0.1);
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;	/* Firefox 4 */
+	-webkit-transition: all 0.3s;	/* Safari 和 Chrome */
+	-o-transition: all 0.3s;
+	
+}
+
+.g-team .team-member .team-member-pic:hover .team-member-info p{
+	bottom:0px;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;	/* Firefox 4 */
+	-webkit-transition: all 0.3s;	/* Safari 和 Chrome */
+	-o-transition: all 0.3s;
+}
+
+.g-team .team-member .team-member-pic:hover .team-member-info {
+	background-color: rgba(0, 0, 0, 0);
+	filter:alpha(opacity=0);
+
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;	/* Firefox 4 */
+	-webkit-transition: all 0.3s;	/* Safari 和 Chrome */
+	-o-transition: all 0.3s;
+}
+
+.g-team .team-member-info p {
+	position: absolute;
+	box-sizing: border-box;
+	width: 240px;
+	padding: 0.3em 1em;
+	bottom:-190px;
+	font-size: 12px;
+	line-height: 1.6;
+	text-indent: 2em;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.9);
+	filter:alpha(opacity=90);
+
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;	/* Firefox 4 */
+	-webkit-transition: all 0.3s;	/* Safari 和 Chrome */
+	-o-transition: all 0.3s;
+}
+
+.g-team .team-member-name {
+	color: #989898;
+	height:44px;
+	line-height: 44px;
+	text-align: center;
+}
+
+/* 我们 */
+.g-we {
+	padding: 20px 0px 80px;
+	background-color: #fff;
+	box-shadow: 0px 1px 3px #e1e1e1;
+	overflow: hidden;
+}
+.g-we .we-tit {
+	margin-bottom: 30px;
+}
+
+.g-we .swiper-team{
+	position: relative;
+	margin-left: 3px;
+}
+
+.g-we .swiper-button-prev {
+	background: url(../../imgs/home/arrows-left-hover.png) no-repeat left top;
+	position: absolute;
+	left:10px;
+	top: 60px;
+	margin-top: -15px;
+	width :64px;
+	height:64px;
+}
+
+.g-we .swiper-button-prev:hover {
+	background: url(../../imgs/home/arrows-left.png) no-repeat left top;
+}
+
+.g-we .swiper-button-next {
+	background: url(../../imgs/home/arrows-right-hover.png) no-repeat right top;
+	position: absolute;
+	right:10px;
+	top: 60px;
+	margin-top: -15px;
+	width :64px;
+	height:64px;
+}
+
+.g-we .swiper-button-next:hover {
+	background: url(../../imgs/home/arrows-right.png) no-repeat right top;
+}

@@ -1,0 +1,161 @@
+.g-bd {
+	width: 960px;
+	margin: 0 auto;
+	background-color: #f5f5f5;
+}
+
+/* 主内容区 */
+.g-bd-container {
+	overflow: hidden;
+}
+
+/* 左右布局 */
+.g-bd .g-news {
+	float: left;
+	width: 640px;
+	background-color: #fff
+}
+
+.g-bd .g-sidebar {
+	width: 280px;
+	float: right;
+}
+
+/* 新闻内容区 */
+.m-news {
+	margin-bottom: 30px;
+}
+
+.g-news .news-hd h1{
+	display: inline-block;
+	float: left;
+	height: 54px;
+	line-height: 54px;
+	font-size: 18px;
+	color: #989898;
+	text-indent: 8px;
+}
+
+.g-news .news-hd a {
+	display: inline-block;
+	float: right;
+	margin-top: 17px;
+	width: 52px;
+	height:19px;
+	line-height: 19px;
+	font-size: 12px;
+	text-align: center;
+	color: #fff;
+	background-color: #9bdcc3;
+}
+
+.g-news .news-hd a:hover {
+	background-color: #66d1a7;
+}
+
+.g-news .news-list .news-item {
+	border-top: 1px dashed #ccc;
+	border-bottom: 1px dashed #ccc;
+}
+
+.g-news .news-list .news-item + .news-item{
+	border-top: none;
+}
+
+.g-news .news-list a {
+	display: block;
+	padding: 8px;
+}
+
+.g-news .news-item:hover .news-item-content h3 {
+	color: #54ac8a;
+}
+
+.g-news .news-list .news-item .news-item-data{
+	float: left;
+	width: 65px;
+	height: 40px;
+	color: #fff;
+	text-align: center;
+	background-color: #66d1a7;
+}
+
+.g-news .news-list .news-item .news-item-data .data-top{
+	font-size: 16px;
+	height:20px;
+	line-height: 20px;
+	font-weight: bold;
+}
+
+.g-news .news-list .news-item .news-item-data .data-bottom {
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+}
+
+.g-news .news-list .news-item-content {
+	height: 40px;
+	width: 552px;
+	float:right;
+}
+
+.g-news .news-list .news-item-content h3{
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	color: #888;
+	overflow:hidden;
+	word-wrap:normal;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+.g-news .news-list .news-item-content p {
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #c7c7c7;
+	overflow:hidden;
+	word-wrap:normal;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+
+/* 右边栏 */
+.g-bd .g-sidebar > div {
+	padding:14px 13px;
+	margin-bottom:16px;
+	background-color: #fff;
+}
+
+.g-bd .g-sidebar > div > h3 {
+	font-size: 18px;
+	line-height: 1.6;
+	color: #989898;
+	font-weight: normal;
+}
+
+.g-bd .g-sidebar .m-contact > div{
+	width:255px;
+	height:75px;
+	line-height: 75px;
+	background-color: #d6d1d1;
+	text-align: center;
+
+}
+
+.g-bd .g-sidebar .m-campus > div {
+	width:255px;
+	height:187px;
+	padding:3px;
+	box-sizing: border-box;
+	border:1px solid #d6d1d1;
+	text-align: center;
+}
+
+.g-bd .g-sidebar .m-campus > div img{
+	width:100%;
+	height:100%;
+}
+
