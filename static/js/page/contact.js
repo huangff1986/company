@@ -1,3 +1,4 @@
 $(function(){
-	$(".m-form").Validform();
+	$(".m-form").Validform({
+	});
 })
