@@ -68,7 +68,7 @@ module.exports = {
 			filename: '../index.html', //生成的html存放路径，相对于 path
 			template: './src/template/index.html', // html模板路径
 			// bundleName: bundleConfig.bundle.js,
-			favicon: './favicon.icon',
+			favicon: './favicon.ico',
 			hash: false,
 		}),
 
