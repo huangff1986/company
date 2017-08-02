@@ -19,7 +19,7 @@ class Roots extends Component {
 // require.ensure( [依赖模块]， 需要按需加载的callback, webpack为模块打包后的chunk文件名  )
 
 // 首页
-const home = (locationm cb) => {
+const home = (locationm, cb) => {
 	require.ensure([], require => {
 		cb(null, require('../containers/home/homeIndex').default)
 	}, 'home');

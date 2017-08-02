@@ -117,7 +117,7 @@ const requireAuth = (nextState, replace) => {
 const RouteConfig = (
 	<Router history={browserHistory}>
 		<Route path="/home" component={layout} onEnter={requireAuth}>
-			<IndexRoute getComponent={home} onEnter={requireAuth} /> // 默认加载的组件，比如访问www.test.com,会自动跳转到www.test.com/home
+			<IndexRoute getComponent={home} onEnter={requireAuth} />
 			<Route path="/home" getComponent={home} onEnter={requireAuth} />
             <Route path="/chart/line" getComponent={chartLine} onEnter={requireAuth} />
 			<Route path="/general/button" getComponent={button} onEnter={requireAuth} />
@@ -128,8 +128,8 @@ const RouteConfig = (
 			<Route path="/ui/oneui" getComponent={oneui} onEnter={requireAuth} />
 			<Route path="/ui/twoui" getComponent={twoui} onEnter={requireAuth} />
 		</Route>
-		<Route path="/login" component={Roots}> // 所有的访问，都跳转到Roots
-			<IndexRoute component={login} /> // 默认加载的组件，比如访问www.test.com,会自动跳转到www.test.com/home
+		<Route path="/login" component={Roots}> 
+			<IndexRoute component={login} />
 		</Route>
 		<Redirect from="*" to="/home" />
 	</Router>
