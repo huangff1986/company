@@ -1,8 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 import { Router, Route, Redirect, IndexRoute, browserHistory, hashHistory } from 'react-router';
 import Config from '../config/index';
-import layout from '../component/layout/layout'; // 布局界面
+/* route的 职责 */
+/*
+ * 1. 加载 layout 主框架
+ * 2. 更具 url 去渲染
+ */
 
+import layout from '../component/layout/layout'; // 布局界面
 import login from '../containers/login/login';
 
 class Roots extends Component {
