@@ -12,7 +12,7 @@ const initialState = {
  * 公共reducer
  * @return
  */
-const Common = (state = initialState, action) => {
+const Common = ( state = initialState, action )  => {
     switch(action.type) {
         case LOADING: // 用于页面和区块的加载中状态
             return fromJS(state).merge({loading: action.loading}).toJS();

@@ -14,6 +14,7 @@ class LoginService {
      * @return {登录信息}
      */
     goLogin(params, success, fail) {
+    	console.log(params);
         return Xhr.post('/user/login', params, success, fail);
     }
 }

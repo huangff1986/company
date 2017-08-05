@@ -46,28 +46,6 @@ const home = (location, cb) => {
         cb(null, require('../containers/home/homeIndex').default)
     }, 'home');
 }
-
-// 百度图表-折线图
-const chartLine = (location, cb) => {
-    require.ensure([], require => {
-        cb(null, require('../containers/charts/lines').default)
-    }, 'chartLine');
-}
-
-// 基础组件-按钮
-const button = (location, cb) => {
-    require.ensure([], require => {
-        cb(null, require('../containers/general/buttonIndex').default)
-    }, 'button');
-}
-
-// 基础组件-图标
-const icon = (location, cb) => {
-    require.ensure([], require => {
-        cb(null, require('../containers/general/iconIndex').default)
-    }, 'icon');
-}
-
 // 用户管理
 const user = (location, cb) => {
     require.ensure([], require => {
@@ -76,31 +54,10 @@ const user = (location, cb) => {
 }
 
 // 系统设置
-const setting = (location, cb) => {
+const news = (location, cb) => {
     require.ensure([], require => {
-        cb(null, require('../containers/setting/settingIndex').default)
-    }, 'setting');
-}
-
-// 广告管理
-const adver = (location, cb) => {
-    require.ensure([], require => {
-        cb(null, require('../containers/adver/adverIndex').default)
-    }, 'adver');
-}
-
-// 组件一
-const oneui = (location, cb) => {
-    require.ensure([], require => {
-        cb(null, require('../containers/ui/oneIndex').default)
-    }, 'oneui');
-}
-
-// 组件二
-const twoui = (location, cb) => {
-    require.ensure([], require => {
-        cb(null, require('../containers/ui/twoIndex').default)
-    }, 'twoui');
+        cb(null, require('../containers/news/newsIndex').default)
+    }, 'news');
 }
 
 // 登录验证
@@ -119,14 +76,8 @@ const RouteConfig = (
 		<Route path="/home" component={layout} onEnter={requireAuth}>
 			<IndexRoute getComponent={home} onEnter={requireAuth} />
 			<Route path="/home" getComponent={home} onEnter={requireAuth} />
-            <Route path="/chart/line" getComponent={chartLine} onEnter={requireAuth} />
-			<Route path="/general/button" getComponent={button} onEnter={requireAuth} />
-			<Route path="/general/icon" getComponent={icon} onEnter={requireAuth} />
+            <Route path="/news" getComponent={news} onEnter={requireAuth} />
             <Route path="/user" getComponent={user} onEnter={requireAuth} />
-			<Route path="/setting" getComponent={setting} onEnter={requireAuth} />
-			<Route path="/adver" getComponent={adver} onEnter={requireAuth} />
-			<Route path="/ui/oneui" getComponent={oneui} onEnter={requireAuth} />
-			<Route path="/ui/twoui" getComponent={twoui} onEnter={requireAuth} />
 		</Route>
 		<Route path="/login" component={Roots}> 
 			<IndexRoute component={login} />

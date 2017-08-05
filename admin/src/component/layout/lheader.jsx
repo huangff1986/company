@@ -37,7 +37,7 @@ export class Lheader extends Component {
 			<Header className="layout-header">
 	            <Icon className="trigger" type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'} onClick={this.toggle} />
 	            <Menu mode="horizontal" onClick={this.logout} className="layout-header-menu">
-		        <SubMenu title={<span><Icon type="user" />sosout</span>}>
+		        <SubMenu title={<span><Icon type="user" />管理员</span>}>
 		        	<Menu.Item key="logout">注销</Menu.Item>
 		        </SubMenu>
 			    </Menu>
@@ -49,3 +49,5 @@ export class Lheader extends Component {
 Lheader.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
+
+

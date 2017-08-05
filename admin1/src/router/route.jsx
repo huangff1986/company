@@ -1,10 +1,11 @@
 import React, {Component, PropTypes} from 'react';
-import { Router, Route, Redirect, IndexRoute, browserHistory, hashHistory } from 'react-router';
+import { BrowserRouter as Router, Route, Link } from 'react-router';
 import Config from '../config/index';
 /* route的 职责 */
 /*
  * 1. 加载 layout 主框架
- * 2. 更具 url 去渲染
+ * 2. 根据 url 去渲染 对应的容器组件
+ * 3. 每次渲染之前确认用户是否登录，不过没有就转到 login页。
  */
 
 import layout from '../component/layout/layout'; // 布局界面
@@ -33,7 +34,7 @@ const home = (locationm, cb) => {
 // 新闻管理
 const news = ( location, cb ) => {
 	require.ensure([], require => {
-		cb(null, require('../containers/news/lines').default)
+		cb(null, require('../containers/news/newsIndex').default)
 	}, 'news')
 }
 
@@ -56,9 +57,8 @@ const requireAuth = (nextState, replace) => {
 }
 
 const RouteConfig = (
-	<Router history={browserHistory}>
-		<Route path="/home" component={layout} onEnter={requireAuth}>
-			<IndexRoute path="/home" getComponent={home} onEnter={requireAuth} />
+	<Router>
+		<Route path="/home" component={layout}>
 		</Route>
 	</Router>
 );

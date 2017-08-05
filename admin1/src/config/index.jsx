@@ -9,7 +9,7 @@ const Main = {
 	prefix: 'jjAdmin',      // 表前缀
 	footerText: '晋级教育 版权所有 © 2017 由 jetSnail 支持', // 页脚信息
 	logoSrc: 'https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg', // logo图片地址
-	logoText: '晋级教育-后台' // logo文字
+	logoText: '晋级教育-后台', // logo文字
 	needLogin: true, // 是否需要登录
 	message: {  // 提示信息
 		usernameInput: '请输入用户名',

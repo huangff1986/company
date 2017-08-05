@@ -2,6 +2,9 @@ import React, { Component, PropTypes } from 'react'; // 引入了React和PropTyp
 import { connect } from 'react-redux';
 import { is, fromJS } from 'immutable';
 
+// 公共面包屑
+import { Bcrumb } from '../../component/bcrumb/bcrumb';
+
 /* 以类的方式创建一个组件 */
 class Main extends Component {
     constructor(props) {
@@ -13,7 +16,7 @@ class Main extends Component {
 	render() {
 		return (	
 		<div>
-			系统设置
+			<Bcrumb title="新闻管理" />
 		</div>
 		);
 	}

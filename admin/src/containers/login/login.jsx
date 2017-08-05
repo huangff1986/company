@@ -30,9 +30,14 @@ class Login extends Component {
         // 初始化数据
         actions.initialState();
     }
+    
+    // 点击登录后
   	handleSubmit = (e) => { // 登录
+  		// 取消默认时间
     	e.preventDefault();
+    	// 拿到表单
         const {actions, form} = this.props;
+        // 异步验证操作
 	    form.validateFieldsAndScroll((err, values) => {
 		    if (!err) {
                 let username = values.username, // 用户名
@@ -41,6 +46,7 @@ class Login extends Component {
                         username: username,
                         password: password	
                     };
+                // 如果没有错误，就发送异步 action
 		        actions.goLogin(loginParams);
 		    }
 	    });
@@ -64,6 +70,7 @@ class Login extends Component {
 	    }
 	    callback();
 	}
+	
 	render() {
         const { loading, loginInfo, form } = this.props;
         const getFieldDecorator = form.getFieldDecorator;
@@ -73,7 +80,7 @@ class Login extends Component {
 				<Spin tip="载入中..." spinning={loading}>
 					<div className="login-logo">
 				        <img src={Config.logoSrc} />
-				        <span>Ant Design</span>
+				        <span>晋级教育后台系统</span>
 				    </div>
 					<Form onSubmit={this.handleSubmit}>
 				        <FormItem hasFeedback>
@@ -89,10 +96,6 @@ class Login extends Component {
 				        <FormItem>
 				            <Button type="primary" htmlType="submit" size="large" loading={loginInfo.length > 0 ? true : false}>{loginInfo.length > 0 ? '登录中...' : '登录'}</Button>
 				        </FormItem>
-				        <div className="login-account">
-                            <span>账号：sosout</span>
-                            <span>密码：sosout</span>
-				        </div>
 			        </Form>
 		        </Spin>
 			</div>

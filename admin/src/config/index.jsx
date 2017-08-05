@@ -1,10 +1,14 @@
+import logo from '../imgs/logo.png'
+
+// http://localhost:8082
+
 const Main = {
-	target: process.env.NODE_ENV !== 'production' ? 'http://admin.sosout.com' : 'http://admin.sosout.com', //目标网站
-    name: 'Ant Design Admin',
+	target: process.env.NODE_ENV !== 'production' ? 'http://localhost:8082' : 'http://localhost:8082', //目标网站
+    name: '晋级教育-后台',
     prefix: 'antdAdmin',
-    footerText: 'Ant Design Admin 版权所有 © 2017 由 sosout 支持',
-    logoSrc: 'https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg',
-    logoText: 'Antd Admin',
+    footerText: '晋级教育 版权所有 © 2017',
+    logoSrc: logo,
+    logoText: '晋级教育',
     needLogin: true,
 	message: { // 提示信息
 		usernameInput: '请输入用户名',

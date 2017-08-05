@@ -20,13 +20,17 @@ Tool.ajax = function (mySetting) {
     var aData = []; //存储数据
     var sData = ''; //拼接数据
     //属性覆盖
+
+    // mySetting 与 setting 合并
     for (var attr in mySetting) {
         setting[attr] = mySetting[attr];
     }
+    // 将 setting data的默认对象数据转换成 字符串数据
     for (var attr in setting.data) {
         aData.push(attr + '=' + filter(setting.data[attr]));
     }
     sData = aData.join('&');
+
     setting.type = setting.type.toUpperCase();
 
     var xhr = new XMLHttpRequest();

@@ -6,6 +6,8 @@ var proxyMiddleware = require('http-proxy-middleware');
 
 var app = express();
 var compiler = webpack(config);
+var bodyParser = require('body-parser'); // 添加解析 post body 
+
 
 app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: config.output.publicPath,
@@ -18,11 +20,39 @@ app.use(require('webpack-dev-middleware')(compiler, {
     }
 }));
 
+app.use(bodyParser.urlencoded({extended: false})); 
+app.use(bodyParser.json());
+
 // 代理服务器
 app.use('/common', proxyMiddleware({
     target: 'http://admin.sosout.com',
     changeOrigin: true
 }));
+
+// 密码验证
+app.post('/user/login', function(req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    var success = {
+        id: 1,
+        user_name: "admin",
+        password : "admin",
+        name     : "管理员",
+        create_time: new Date().getTime(),
+        status: 1,
+        email: "906032172@qq.com"
+    }
+    var fail = {
+        status: 0,
+    }
+
+
+    if( username === 'admin' && password === 'admin' ){
+        res.end(JSON.stringify(success))
+    } else {
+        res.end(JSON.stringify(fail))
+    }
+});
 
 app.use(require('webpack-hot-middleware')(compiler));
 
