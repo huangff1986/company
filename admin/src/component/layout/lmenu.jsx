@@ -44,22 +44,20 @@ export class Lmenu extends Component {
 		const defaultSelectedKey = process.env.NODE_ENV !== 'production' ? [location.pathname.split('/')[location.pathname.split('/').length - 1] || 'home'] : [location.hash.split('/')[location.hash.split('/').length - 1].split('?')[0] || 'home'];
 		return (
 			<Menu openKeys={this.state.openKeys} onOpenChange={this.onOpenChange} theme="dark" mode={this.props.mode} defaultSelectedKeys={defaultSelectedKey}>
+
 		        <Menu.Item key="home">
 			        <Link to="/home">
 		              <Icon type="laptop" />
 		              {!this.props.collapsed && <span className="nav-text">首页</span>}
 		            </Link>
 	            </Menu.Item>
+
 	            <SubMenu key="news" title={<span><Icon type="file-text" /><span>文章</span></span>}>
                     <Menu.Item key="addnews">
-    			        <Link to="/news/add">
-    		              {!this.props.collapsed && <span className="nav-text">新增文章</span>}
-    		            </Link>
+    			        <Link to="/news/add">新增文章</Link>
     	            </Menu.Item>
                     <Menu.Item key="managenews">
-    			        <Link to="/news/manage">
-    		              {!this.props.collapsed && <span className="nav-text">管理文章</span>}
-    		            </Link>
+    			        <Link to="/news/manage">管理文章</Link>
     	            </Menu.Item>
 	            </SubMenu>
                 <Menu.Item key="user">

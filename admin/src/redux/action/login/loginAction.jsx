@@ -49,7 +49,7 @@ export const goLogin = (params) => {
         dispatch(loading(true));
         // 通过 LoginService 发送异步请求。
         LoginService.goLogin(params, (res) => {
-            console.log(res)
+            console.log(res);
             dispatch(loading(false));
             dispatch(resLogin(res));
             if(res.status === 1) { // 他的识别方法， 通过返回结果是否有值来判断是否登录成功。

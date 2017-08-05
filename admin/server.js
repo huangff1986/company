@@ -37,7 +37,7 @@ app.post('/user/login', function(req, res) {
         id: 1,
         user_name: "admin",
         password : "admin",
-        name     : "管理员",
+        name     : "啪嗒啪嗒",
         create_time: new Date().getTime(),
         status: 1,
         email: "906032172@qq.com"

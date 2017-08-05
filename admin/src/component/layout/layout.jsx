@@ -65,7 +65,7 @@ class Main extends Component {
 	        	<Lmenu mode={ this.state.mode } />
 	        </Sider>
 	        <Layout>
-	          <Lheader collapsed={this.state.collapsed} toggle={ collapsed => this.toggle(collapsed) } />
+	          <Lheader collapsed={this.state.collapsed} toggle={ collapsed => this.toggle(collapsed) } name={ this.props.name }/>
 	          <Content className="layout-content">
 	           	{this.props.children}
 	          </Content>
@@ -76,4 +76,13 @@ class Main extends Component {
 	}
 }
 
-export default Main;
+const getUserName = (state) => {
+	console.log(state.Login.loginInfo.name);
+	return {
+		name: state.Login.loginInfo.name
+	}
+}
+
+const MainState = connect(getUserName)(Main);
+
+export default MainState;

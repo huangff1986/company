@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Router } from 'react-router';
 import { is, fromJS } from 'immutable';
+import { connect } from 'react-redux';
 import { Layout, Menu, Icon } from 'antd';
 import Config from '../../config/index';
 const SubMenu = Menu.SubMenu;
@@ -13,6 +14,7 @@ const { Header } = Layout;
  * @class Lheader
  * @extends {Component}
  */
+
 export class Lheader extends Component {
 	constructor(props, context) {
 		super(props, context); //后才能用this获取实例化对象
@@ -37,7 +39,7 @@ export class Lheader extends Component {
 			<Header className="layout-header">
 	            <Icon className="trigger" type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'} onClick={this.toggle} />
 	            <Menu mode="horizontal" onClick={this.logout} className="layout-header-menu">
-		        <SubMenu title={<span><Icon type="user" />管理员</span>}>
+		        <SubMenu title={<span><Icon type="user" />{this.props.name}</span>}>
 		        	<Menu.Item key="logout">注销</Menu.Item>
 		        </SubMenu>
 			    </Menu>
@@ -49,5 +51,4 @@ export class Lheader extends Component {
 Lheader.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
-
 

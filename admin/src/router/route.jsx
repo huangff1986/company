@@ -53,12 +53,15 @@ const user = (location, cb) => {
     }, 'user');
 }
 
-// 系统设置
-const news = (location, cb) => {
+// 新增文章页
+
+const addNews = (location, cb) => {
     require.ensure([], require => {
-        cb(null, require('../containers/news/newsIndex').default)
+        cb(null, require('../containers/news/addNews').default)
     }, 'news');
 }
+
+
 
 // 登录验证
 const requireAuth = (nextState, replace) => {
