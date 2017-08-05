@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'; // 引入了React和PropTypes
 import { connect } from 'react-redux';
 import { is, fromJS } from 'immutable';
-
+import { Row, Col, Card } from 'antd';
 // 公共面包屑
 import { Bcrumb } from '../../component/bcrumb/bcrumb';
 
@@ -16,7 +16,14 @@ class Main extends Component {
 	render() {
 		return (	
 		<div>
-			<Bcrumb title="新闻管理" />
+			<Bcrumb title="文章管理" icon="copy"/>
+			<Row>
+				<Col span={24}>
+			        <Card title="文章管理也">
+			            <p>正在开发中。。。。</p>
+			        </Card> 
+			    </Col>
+			</Row>
 		</div>
 		);
 	}

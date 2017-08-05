@@ -61,7 +61,11 @@ const addNews = (location, cb) => {
     }, 'news');
 }
 
-
+const manageNews = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/news/manageNews').default)
+    }, 'news');
+}
 
 // 登录验证
 const requireAuth = (nextState, replace) => {
@@ -79,7 +83,8 @@ const RouteConfig = (
 		<Route path="/home" component={layout} onEnter={requireAuth}>
 			<IndexRoute getComponent={home} onEnter={requireAuth} />
 			<Route path="/home" getComponent={home} onEnter={requireAuth} />
-            <Route path="/news" getComponent={news} onEnter={requireAuth} />
+            <Route path="/news/addNews" getComponent={addNews} onEnter={requireAuth} />
+            <Route path="/news/manageNews" getComponent={manageNews} onEnter={requireAuth} />
             <Route path="/user" getComponent={user} onEnter={requireAuth} />
 		</Route>
 		<Route path="/login" component={Roots}> 

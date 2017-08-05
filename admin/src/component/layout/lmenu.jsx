@@ -54,10 +54,12 @@ export class Lmenu extends Component {
 
 	            <SubMenu key="news" title={<span><Icon type="file-text" /><span>文章</span></span>}>
                     <Menu.Item key="addnews">
-    			        <Link to="/news/add">新增文章</Link>
+                    	<Icon type="edit"/>
+    			        <Link to="/news/addNews">新增文章</Link>
     	            </Menu.Item>
                     <Menu.Item key="managenews">
-    			        <Link to="/news/manage">管理文章</Link>
+                    	<Icon type="copy"/>
+    			        <Link to="/news/manageNews">管理文章</Link>
     	            </Menu.Item>
 	            </SubMenu>
                 <Menu.Item key="user">
