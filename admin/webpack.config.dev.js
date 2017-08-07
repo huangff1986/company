@@ -35,23 +35,23 @@ module.exports = {
             include: [APP_PATH]
         }, {
             test: /\.css$/,
-            exclude: /node_modules/,
+            // exclude: /node_modules/,
             use: ['happypack/loader?id=css'],
-            include: [APP_PATH]
+            // include: [APP_PATH]
         }, {
             test: /\.less$/, // 去掉exclude: /^node_modules$/和include: [APP_PATH]是为了babel-plugin-import按需加载antd资源
             use: ['happypack/loader?id=less']
         }, {
             test: /\.(eot|woff|svg|ttf|woff2|gif|appcache)(\?|$)/,
-            exclude: /node_modules/,
+            // exclude: /node_modules/,
             use: ['file-loader?name=[name].[ext]'],
-            include: [APP_PATH]
+            // include: [APP_PATH]
         }, {
             test: /\.(png|jpg|gif)$/,
-            exclude: /node_modules/,
+            // exclude: /node_modules/,
             use: ['url-loader?limit=8192&name=images/[hash:8].[name].[ext]'],
             //注意后面那个limit的参数，当你图片大小小于这个限制的时候，会自动启用base64编码图片
-            include: [APP_PATH]
+            // include: [APP_PATH]
         }, {
             test: /\.jsx$/,
             exclude: /node_modules/,

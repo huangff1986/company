@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { is, fromJS } from 'immutable';
 import { Row, Col, Card } from 'antd';
 // 公共面包屑
+import Editor from '../../component/editor/editor'
 import { Bcrumb } from '../../component/bcrumb/bcrumb';
 
 /* 以类的方式创建一个组件 */
@@ -16,11 +17,11 @@ class Main extends Component {
 	render() {
 		return (	
 		<div>
-			<Bcrumb title="文章管理" icon="copy"/>
+			<Bcrumb title="新增文章" icon="edit"/>
 			<Row>
 				<Col span={24}>
-			        <Card title="文章管理也">
-			            <p>正在开发中。。。。</p>
+			        <Card title="新增文章页">
+			        	<Editor />
 			        </Card> 
 			    </Col>
 			</Row>

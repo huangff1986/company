@@ -20,7 +20,7 @@ class Main extends Component {
 			<Row>
 				<Col span={24}>
 			        <Card title="新增文章页">
-			            <p>正在开发中。。。。</p>
+			            <p>新增文章页</p>
 			        </Card> 
 			    </Col>
 			</Row>
