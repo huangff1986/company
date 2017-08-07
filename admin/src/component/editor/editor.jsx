@@ -140,36 +140,7 @@ export default class Test extends React.Component {
       showUploadList: true
     }
     return (
-      <div>
-        <div>Editor demo 1 (use default html format ):
-        </div>
         <LzEditor active={true} importContent={this.state.htmlContent} cbReceiver={this.receiveHtml} uploadProps={uploadProps}/>
-        <br/>
-        <br/>
-        <div>Editor demo 2 (use markdown format ):
-        </div>
-        <LzEditor
-          active={true}
-          importContent={this.state.markdownContent}
-          cbReceiver={this.receiveMarkdown}
-          image={false}
-          video={false}
-          audio={false}
-          convertFormat="markdown"/>
-        <br/>
-        <br/>
-        <div>Editor demo 3 (use Raw format ):
-        </div>
-        <LzEditor
-          active={true}
-          importContent={this.state.rawContent}
-          cbReceiver={this.receiveRaw}
-          uploadConfig={uploadConfig}
-          image={false}
-          video={false}
-          audio={false}
-          convertFormat="raw"/>
-      </div>
     );
   }
 }
