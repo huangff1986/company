@@ -27,6 +27,7 @@ export default class Test extends React.Component {
           '"data":{}}]}',
       responseList: []
     }
+
     this.receiveHtml = this.receiveHtml.bind(this);
     this.receiveMarkdown = this.receiveMarkdown.bind(this);
     this.receiveRaw = this.receiveRaw.bind(this);
@@ -35,21 +36,27 @@ export default class Test extends React.Component {
     this.getSignature = this.getSignature.bind(this);
     this.getPolicy = this.getPolicy.bind(this);
   }
+  // 接受HTML时执行
   receiveHtml(content) {
     console.log("recieved HTML content", content);
   }
   componentDidMount() {}
+  // 接受到Markdown时执行
   receiveMarkdown(content) {
     console.log("recieved markdown content", content);
   }
+  // 接受到Raw时执行
   receiveRaw(content) {
     console.log("recieved Raw content", content);
   }
+
+  // 输入文章时
   onChange(info) {
     // console.log("onChange:", info);
     // console.log("upload onChange this.state.files",this.state.files,info)
+    // 获取文件列表
     let currFileList = info.fileList;
-
+    // 过滤掉 文件为空的 元素
     currFileList = currFileList.filter((f) => (!f.length));
     let url = "http://devopee.b0.upaiyun.com";
     //读取远程路径并显示链接

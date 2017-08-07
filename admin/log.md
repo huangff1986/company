@@ -12,3 +12,9 @@
 【工作】添加 antd 表单
 
 【问题】添加表单组件老是出错，原因在与忘记组件名大写
+
+【经验】FormItem 作为一个条，可以在这条中添加 label 定义 input宽度等
+
+【工作】解决表单验证问题
+
+【经验】获取时间戳 var timestamp =Date.parse(new Date());
