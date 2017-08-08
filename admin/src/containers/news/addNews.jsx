@@ -118,7 +118,7 @@ class Main extends Component {
 				        							{ type: 'object', required: true, messge: '请输入文章日期' }
 				        						]
 				        					}
-				        				)(<DatePicker defaultValue={moment().format('L')}/>)
+				        				)(<DatePicker />)
 				        			}
 				        		</FormItem>
 			        			<FormItem
