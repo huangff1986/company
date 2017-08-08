@@ -59,7 +59,7 @@ export default class Test extends React.Component {
     // 过滤掉 文件为空的 元素
     currFileList = currFileList.filter((f) => (!f.length));
     let url = "http://devopee.b0.upaiyun.com";
-    //读取远程路径并显示链接
+    //读取远程路径并显示链接 （将currFileList的url拼接成完整的url）
     currFileList = currFileList.map((file) => {
       if (file.response) {
         // 组件会将 file.url 作为链接进行展示
@@ -90,9 +90,11 @@ export default class Test extends React.Component {
     }
     _this.forceUpdate();
   }
+  // 文章上传前
   beforeUpload(file) {
     console.log("beforeUpload like", file);
   }
+  // 七牛云所需要的 Signature Policy
   getSignature(fileName) {
     let now = new Date();
     let h = hmacsha1('19931944122b23f77681b6ab765648f8', 'POST&/upyun-temp/' + fileName + '&' + now);

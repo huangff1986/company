@@ -1,4 +1,4 @@
-2017/8/2
+2017/8/7
 --------
 
 新增 react-lz-editor 富文本编辑器。
@@ -18,3 +18,26 @@
 【工作】解决表单验证问题
 
 【经验】获取时间戳 var timestamp =Date.parse(new Date());
+
+
+
+2017/8/8
+--------
+
+【问题】给 antd Form 输入域 添加 getFieldDecorator 输入域不能输入了？？
+【分析】
+    1. 语法规则已经比对了很多遍应该不是书写问题。
+    2. 更大的可能性时 onChange 部分， 双向数据绑定没有绑定上。但是新版本的onchange是不需要绑定的。
+    
+    我决定重新写
+【解决】
+    原因是 shouldComponentUpdate 与 Form管理的state有些冲突。
+     // 优化组件更新速度
+    shouldComponentUpdate(nextProps, nextState) {
+        return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state),fromJS(nextState))
+    }
+
+    解决方案，删除这一段就可以了。
+
+
+【解决文章日期问题】
