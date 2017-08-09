@@ -1,13 +1,21 @@
 import { loading } from '../index'; // 加载状态action
-import { NewsService } from '../../../services/newsService'
+import { goAddArtService } from '../../../services/newsService';
+import { ADD_NEWS_LOADING } from '../../constants/addArtTypes';
 /**
  * 文章新增成功
  */
-const AddArtSuccess = (res) => {
+const addArtSuccess = (res) => {
 	return {
 	}
 }
 
+// 文章加载中
+const addNewsLoading = (isloading) => {
+	return (
+		type: ADD_NEWS_LOADING,
+		isloading
+	)
+}
 
 /**
  * 异步新增文章 action
@@ -17,12 +25,11 @@ const AddArtSuccess = (res) => {
 export const goAddArt = (params) => {
 	// 异步 midden
 	return dispatch => {
-		dispatch(loading(true)); // 发起请求时修改为加载状态
+		dispatch(addNewsLoading(true)); // 发起请求时修改为加载状态
 		// 通过 NewsService 发送异步请求
-		NewsService.goAddArt(params, (res) => {
+		goAddArtService(params, (res) => {
 			console.log(res);
-			dispatch(loading(false)); // 获取请求数据后将加载状态取消;
-			dispatch(resAddArt(res)); // 
+			dispatch(addNewsLoading(false)); // 获取请求数据后将加载状态取消;
 
 			if(res.status === 1) {
 

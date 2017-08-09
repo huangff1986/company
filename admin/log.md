@@ -94,3 +94,16 @@
 
   在reducer中建立一个存放20条文章条数的数据列表容器。
   任何操作都是更新都是更新 文章列表的中的数据
+
+【问题】 在写 reducer 的时候 忘记写 default 导致Common没有导出
+    export default Common;
+
+【经验】 export default 和 export 区别
+    1.export与export default均可用于导出常量、函数、文件、模块等
+    2.你可以在其它文件或模块中通过import+(常量 | 函数 | 文件 | 模块)名的方式，将其导入，以便能够对其进行使用
+    3.在一个文件或模块中，export、import可以有多个，export default仅有一个
+    4.通过export方式导出，在导入时要加{ }，export default则不需要
+
+    使用export default命令，为模块指定默认输出，这样就不需要知道所要加载模块的变量名
+
+【任务】 新增正在提交状态

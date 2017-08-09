@@ -1,0 +1,1 @@
+export const ADD_NEWS_LOADING = 'ADD_NEWS_LOADING'; // 新闻页加载状态
