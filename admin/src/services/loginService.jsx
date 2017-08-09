@@ -19,15 +19,5 @@ class LoginService {
     }
 }
 
-class addArt() {
-    /**
-     * 新增文章
-     * @param {artclass}  文章分类
-     * @param {title}     文章标题
-     * @param {date}      文章创建日期
-     * @param {keyword}   文章关键字
-     * @param {summary}   文章摘要
-     */
-}
-// 实例化再导出
+
 export default new LoginService();
