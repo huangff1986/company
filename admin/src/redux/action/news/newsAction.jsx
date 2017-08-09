@@ -3,9 +3,8 @@ import { NewsService } from '../../../services/newsService'
 /**
  * 文章新增成功
  */
-const resAddArt = (res) => {
+const AddArtSuccess = (res) => {
 	return {
-		type: ,
 	}
 }
 
@@ -18,7 +17,16 @@ const resAddArt = (res) => {
 export const goAddArt = (params) => {
 	// 异步 midden
 	return dispatch => {
-		dispatch(loading(false)); // 将状态修改为加载结束;
-		
+		dispatch(loading(true)); // 发起请求时修改为加载状态
+		// 通过 NewsService 发送异步请求
+		NewsService.goAddArt(params, (res) => {
+			console.log(res);
+			dispatch(loading(false)); // 获取请求数据后将加载状态取消;
+			dispatch(resAddArt(res)); // 
+
+			if(res.status === 1) {
+
+			}
+		})
 	}
 }

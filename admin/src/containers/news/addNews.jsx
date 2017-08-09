@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'; // 引入了React和PropTypes
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { goAddArt } from '../../redux/action/news/newsAction';
 import moment from 'moment';
 import { is, fromJS } from 'immutable';
 import { 
@@ -22,7 +24,7 @@ import { Bcrumb } from '../../component/bcrumb/bcrumb';
 
 
 /* 以类的方式创建一个组件 */
-class Main extends Component {
+class AddNews extends Component {
     constructor(props) {
     	super(props);
     }
@@ -36,10 +38,19 @@ class Main extends Component {
     	// 取消默认事件
     	e.preventDefault();
     	// 拿到表单 以及 redux action
-    	const { form } = this.props;
+    	const { actions, form } = this.props;
     	// 异步验证操作
     	form.validateFieldsAndScroll((err, values) => {
-    		// 如果不存在错误
+    		if (!err) {
+    			// 如果不存在错误
+    			let addArtData = {
+    				artclass : values.artclass,
+    				date     : values.date,
+    				keyWord  : values.keyWord,
+    				summary  : values.summary
+    			}
+    			actions.goAddArt(addArtData);
+    		}
 
     	})
     }
@@ -162,11 +173,20 @@ class Main extends Component {
 	}
 }
 
-Main.contextTypes = {
-};
+
+const AddNewsForm = Form.create()(AddNews);
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+    }
+}
+
+// 将 action 绑定到 组件上
+const mapDispatchToProps = (dispatch, ownProps) => ({
+	actions: bindActionCreators({ goAddArt }, dispatch)
+})
+
+const Main = connect(mapStateToProps, mapDispatchToProps)(AddNewsForm); // 连接redux
 
 
-// 初始化Form
-const MainForm = Form.create()(Main);
-
-export default MainForm;
+export default Main;
